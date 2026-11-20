@@ -1,10 +1,13 @@
 import pygame
 
+# Initializing colour
+ORANGE = (245, 123, 66)
+
 # Initializing all imported pygame modules
 (numpass, numfail) = pygame.init()
 
 # Setting size of the window
-screen = pygame.display.set_mode((800, 600))
+screen = pygame.display.set_mode((800, 600), pygame.RESIZABLE)
 # Gets default screen size assigned above
 x, y = screen.get_size()
 
@@ -15,12 +18,21 @@ pygame.display.set_caption("Hello pygame")
 print("Number of modules initialized successfully: ", numpass)
 print("Number of modules failed to initialize: ", numfail)
 
+
+# Changing background colour
+screen.fill(ORANGE)
+pygame.display.flip()
+
 # Bool value to check if game is running, default true
 running = True
 while running:
     # Checking for events
     for event in pygame.event.get():
-
+        # Detect Resizing event
+        if event.type == pygame.WINDOWRESIZED:
+            x, y = screen.get_size()
+            print("New Width of the window:", x,
+                  "New height of the window:", y)
         # Event to quit the game
         if event.type == pygame.QUIT:
             running = False
