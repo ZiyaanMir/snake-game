@@ -1,2 +1,3 @@
 # snake-game
-Sanke game in pygame for fun. Yippee
+
+Sanke game using pygame for fun. Yippee
