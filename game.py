@@ -25,6 +25,9 @@ print("Number of modules failed to initialize: ", numfail)
 colour = ORANGE
 # Changing background colour
 screen.fill(colour)
+pygame.draw.rect(screen, YELLOW, pygame.Rect(30, 30, 60, 60))
+screen.blit(Icon, (0, -400))
+
 pygame.display.flip()
 
 
